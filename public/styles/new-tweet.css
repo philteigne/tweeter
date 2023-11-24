@@ -23,6 +23,10 @@ form textarea {
   color: #000000;
 }
 
+form textarea:focus {
+  outline: none;
+}
+
 form output {
   font-family: 'Bungee', sans-serif;
   font-size: 1.5rem;
