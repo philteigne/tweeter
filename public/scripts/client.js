@@ -4,7 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function () {
+// @ts-ignore
+$(document).ready(function() {
 
   //  escape non text user inputs to prevent XSS
   const escape = (str) => {
@@ -32,7 +33,13 @@ $(document).ready(function () {
       url: "/tweets",
       data: $('#compose-tweet').serialize(),
     })
-      .then(loadTweets());
+      .then(() => {
+        $('#compose-tweet')[0].reset();
+      })
+      .then(() => {
+        loadTweets();
+      })
+      // .then($('#compose-tweet').trigger("reset")); // stops working after refresh?
 
     event.preventDefault();
   });
