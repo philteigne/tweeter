@@ -6,6 +6,13 @@
 
 $(document).ready(function () {
 
+  //  escape non text user inputs to prevent XSS
+  const escape = (str) => {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   //  add event listener that posts to /tweets
   $('#compose-tweet').on("submit", (event) => {
     if ($('#compose-tweet')[0][2].value < 0) {
@@ -48,11 +55,11 @@ $(document).ready(function () {
                       <header class="tweet-author">
                         <div class="tweet-author">
                           <i class="fa-solid fa-person"></i>
-                          <h3>${tweetObject.user.name}</h3>
+                          <h3>${escape(tweetObject.user.name)}</h3>
                         </div>
-                        <h4>${tweetObject.user.handle}</h4>
+                        <h4>${escape(tweetObject.user.handle)}</h4>
                       </header>
-                      <p>${tweetObject.content.text}</p>
+                      <p>${escape(tweetObject.content.text)}</p>
                       <footer>
                         <a class="date">${timeago.format(tweetObject.created_at)}</a>
                         <div class = "social-symbols">
