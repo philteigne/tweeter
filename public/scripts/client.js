@@ -6,17 +6,28 @@
 
 $(document).ready(function () {
 
-  //  add event listener that submits t
+  //  add event listener that posts to /tweets
   $('#compose-tweet').on("submit", (event) => {
     console.log($('#compose-tweet').serialize());
     $.ajax({
       type: "POST",
       url: "/tweets",
       data: $('#compose-tweet').serialize(),
-      dataType: 'string',
     });
     event.preventDefault();
   });
+
+  // fetch tweets from /tweets
+  const loadTweets = () => {
+    $.ajax({
+      type: "GET",
+      url: "/tweets",
+    })
+      .then((allTweets) => {
+        console.log(allTweets);
+        renderTweets(allTweets);
+      });
+  };
 
   //  Take in a tweet object and return a tweet <article> element containing the html structure of the tweet
   const createTweetElement = (tweetObject) => {
@@ -76,5 +87,5 @@ $(document).ready(function () {
     }
   ];
 
-  renderTweets(data);
+  loadTweets();
 });
