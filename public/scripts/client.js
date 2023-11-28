@@ -6,6 +6,18 @@
 
 $(document).ready(function () {
 
+  //  add event listener that submits t
+  $('#compose-tweet').on("submit", (event) => {
+    console.log($('#compose-tweet').serialize());
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: $('#compose-tweet').serialize(),
+      dataType: 'string',
+    });
+    event.preventDefault();
+  });
+
   //  Take in a tweet object and return a tweet <article> element containing the html structure of the tweet
   const createTweetElement = (tweetObject) => {
     let $tweet = `<article>
@@ -66,4 +78,3 @@ $(document).ready(function () {
 
   renderTweets(data);
 });
-
