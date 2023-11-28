@@ -42,6 +42,7 @@ article {
   font-family: 'Source Sans 3', sans-serif;
   border: solid;
   border-radius: 1px;
+  margin-top: 20px;
 }
 
 article header {
