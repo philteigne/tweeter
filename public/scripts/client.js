@@ -8,12 +8,25 @@ $(document).ready(function () {
 
   //  add event listener that posts to /tweets
   $('#compose-tweet').on("submit", (event) => {
-    console.log($('#compose-tweet').serialize());
+    if ($('#compose-tweet')[0][2].value < 0) {
+      alert("Submitted tweet exceeds character limit");
+      event.preventDefault();
+      return;
+    }
+
+    if ($('#compose-tweet')[0][2].value >= 140 || $('#compose-tweet')[0][2].value === null) {
+      alert("Cannot submit a blank tweet");
+      event.preventDefault();
+      return;
+    }
+
     $.ajax({
       type: "POST",
       url: "/tweets",
       data: $('#compose-tweet').serialize(),
-    });
+    })
+      .then(loadTweets());
+
     event.preventDefault();
   });
 
@@ -24,7 +37,6 @@ $(document).ready(function () {
       url: "/tweets",
     })
       .then((allTweets) => {
-        console.log(allTweets);
         renderTweets(allTweets);
       });
   };
@@ -42,7 +54,7 @@ $(document).ready(function () {
                       </header>
                       <p>${tweetObject.content.text}</p>
                       <footer>
-                        <a class="date">${tweetObject.created_at}</a>
+                        <a class="date">${timeago.format(tweetObject.created_at)}</a>
                         <div class = "social-symbols">
                           <i class="fa-sharp fa-solid fa-flag"></i>
                           <i class="fa-solid fa-retweet"></i>
@@ -57,35 +69,11 @@ $(document).ready(function () {
 
   //  take in an array of tweet objects then append each one to the #tweets-container
   const renderTweets = (tweets) => {
-    for (let i of tweets) {
+    $('#tweets-container').empty();
+    for (let i of tweets.reverse()) {
       $('#tweets-container').append(createTweetElement(i));
     }
   };
-
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
 
   loadTweets();
 });
