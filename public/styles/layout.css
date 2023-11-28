@@ -95,33 +95,8 @@ article footer {
   padding: 20px 20px 20px 20px;
 }
 
-article :hover {
-  box-shadow: 10px 10px #545149
-}
-/* Remove hover from child elements*/
-article :hover header {
-  box-shadow: none;
-}
-article :hover h3 {
-  box-shadow: none;
-}
-article :hover h4 {
-  box-shadow: none;
-}
-article :hover p {
-  box-shadow: none;
-}
-article :hover footer {
-  box-shadow: none;
-}
-article :hover a {
-  box-shadow: none;
-}
-article :hover div {
-  box-shadow: none;
-}
-article :hover i {
-  box-shadow: none;
+article:hover {
+  box-shadow: 10px 10px #545149;
 }
 
 .social-symbols :hover {
