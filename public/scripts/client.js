@@ -17,13 +17,17 @@ $(document).ready(function() {
   //  add event listener that posts to /tweets
   $('#compose-tweet').on("submit", (event) => {
     if ($('#compose-tweet')[0][2].value < 0) {
-      alert("Submitted tweet exceeds character limit");
+      console.log("long tweet");
+      $('#error-message').empty();
+      $('#error-message').append("Submitted tweet exceeds character limit");
       event.preventDefault();
       return;
     }
 
     if ($('#compose-tweet')[0][2].value >= 140 || $('#compose-tweet')[0][2].value === null) {
-      alert("Cannot submit a blank tweet");
+      console.log("empty tweet");
+      $('#error-message').empty();
+      $('#error-message').append("Cannot submit a blank tweet");
       event.preventDefault();
       return;
     }
@@ -38,8 +42,7 @@ $(document).ready(function() {
       })
       .then(() => {
         loadTweets();
-      })
-      // .then($('#compose-tweet').trigger("reset")); // stops working after refresh?
+      });
 
     event.preventDefault();
   });
