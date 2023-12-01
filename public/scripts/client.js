@@ -14,6 +14,16 @@ $(document).ready(function() {
     return div.innerHTML;
   };
 
+  //  add event listener that toggles tweet submission form
+  $(".new-tweet").on('click', () => {
+    if ($('.write-tweet').css('display') === "none") {
+      $('.write-tweet').slideDown();
+      return;
+    }
+
+    $('.write-tweet').slideUp();
+  });
+
   //  add event listener that posts to /tweets
   $('#compose-tweet').on("submit", (event) => {
     if ($('#compose-tweet')[0][2].value < 0) {
