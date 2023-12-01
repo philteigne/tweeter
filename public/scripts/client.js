@@ -19,7 +19,7 @@ $(document).ready(function() {
     if ($('#compose-tweet')[0][2].value < 0) {
       console.log("long tweet");
       $('#error-message').empty();
-      $('#error-message').append("Submitted tweet exceeds character limit");
+      $('#error-message').text("Submitted tweet exceeds character limit");
       event.preventDefault();
       return;
     }
@@ -27,9 +27,14 @@ $(document).ready(function() {
     if ($('#compose-tweet')[0][2].value >= 140 || $('#compose-tweet')[0][2].value === null) {
       console.log("empty tweet");
       $('#error-message').empty();
-      $('#error-message').append("Cannot submit a blank tweet");
+      $('#error-message').text("Cannot submit a blank tweet");
+      $('#error-message').slideDown();
       event.preventDefault();
       return;
+    }
+
+    if ($('#compose-tweet')[0][2].value > 0 && $('#compose-tweet')[0][2].value <= 140) {
+      $('#error-message').slideUp();
     }
 
     $.ajax({
