@@ -108,3 +108,14 @@ article:hover {
   display: flex;
   flex-direction: row;
 }
+
+#error-message {
+  color: red;
+  font-size: 16pt;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  border: solid;
+  padding: 10px;
+  display: none;
+}
