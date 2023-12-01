@@ -57,7 +57,11 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <a id="error-message"></a>
+        <div id="error-message">
+          Submitted tweet exceeds character limit
+          <a id="long-tweet">Submitted tweet exceeds character limit</a>
+          <a id="empty-tweet">Cannot submit a blank tweet</a>
+        </div>
         <form method='POST' action="/tweets" id="compose-tweet">
           <textarea name="text" id="tweet-text" placeholder="What are you humming about"></textarea>
           <div>
