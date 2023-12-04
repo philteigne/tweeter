@@ -39,6 +39,7 @@ main {
 
 article {
   background-color: #f4f1ec;
+  width: 80vw;
   font-size: 24px;
   font-family: 'Source Sans 3', sans-serif;
   border: solid;
@@ -51,7 +52,7 @@ article header {
   font-size: 24px;
   font-family: 'Source Sans 3', sans-serif;
   height: 50px;
-  width: 80vw;
+  width: 100%;
   margin: 20px 0px 20px 0px;
   display: flex;
   align-items: center;
@@ -86,6 +87,8 @@ article p {
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 0px 10px 30px 10px;
+  text-wrap: wrap;
+  word-break: break-all;
 }
 
 article footer {
@@ -147,4 +150,20 @@ section {
   border: solid;
   padding: 10px;
   display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+  }
+
+  main {
+    margin-top: 200px;
+    width: 65vw;
+    justify-content: right;
+  }
+
+  article {
+    width: 50vw;
+  }
 }
