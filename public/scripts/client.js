@@ -77,7 +77,7 @@ $(document).ready(function() {
   const createTweetElement = (tweetObject) => {
     let $tweet = `<article>
                     <div class="tweet-container">
-                      <header class="tweet-author">
+                      <header>
                         <div class="tweet-author">
                           <i class="fa-solid fa-person"></i>
                           <h3>${escape(tweetObject.user.name)}</h3>
