@@ -32,6 +32,10 @@
     
     <!-- Composer Character Counter JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    
+    <!-- Composer JS -->
+    <script type="text/javascript" src="/scripts/composer.js"></script>
+
   </head>
 
   <body>
@@ -42,41 +46,42 @@
         <span><strong>Write</strong> a new tweet</span>
         <i class="fa-solid fa-angles-down"></i>
       </span>
-      
     </nav>
 
-    <header>
-      <div>
-          <img src="/images/profile-hex.png">
-      </div>
-      <div>
-          <h2>Your Name</h2>
-      </div>
-    </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="write-tweet">
-        <h2>Compose Tweet</h2>
-        <div id="error-message">
-          Submitted tweet exceeds character limit
-          <a id="long-tweet">Submitted tweet exceeds character limit</a>
-          <a id="empty-tweet">Cannot submit a blank tweet</a>
+    <div class="wrapper">
+      <header class="profile-splash">
+        <div>
+            <img src="/images/profile-hex.png">
         </div>
-        <form method='POST' action="/tweets" id="compose-tweet">
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about"></textarea>
-          <div>
-            <button type="submit" id="compose-button">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+        <div>
+            <h2>Your Name</h2>
+        </div>
+      </header>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="write-tweet">
+          <h2>Compose Tweet</h2>
+          <div id="error-message">
+            Submitted tweet exceeds character limit
+            <a id="long-tweet">Submitted tweet exceeds character limit</a>
+            <a id="empty-tweet">Cannot submit a blank tweet</a>
           </div>
-        </form>
-      </section>
-      
-      <div id="tweets-container"></div>
+          <form method='POST' action="/tweets" id="compose-tweet">
+            <textarea name="text" id="tweet-text" placeholder="What are you humming about"></textarea>
+            <div>
+              <button type="submit" id="compose-button">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+        
+        <div id="tweets-container"></div>
 
-      <div class="top-return">
-        <i class="fa-solid fa-angles-up"></i>
-      </div>
+        <div class="top-return">
+          <i class="fa-solid fa-angles-up"></i>
+        </div>
 
-    </main>
+      </main>
+    </div>
   </body>
 </html>
