@@ -12,11 +12,12 @@ header {
 }
 
 @media only screen and (min-width: 1024px) {
-  header {
-    margin-top: 200px;
+  .profile-splash {
     width: 35vw;
     justify-content: left;
     margin-right: 5%;
     margin-left: 5%;
+    top: 220px;
+    position: sticky;
   }
 }
