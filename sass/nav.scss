@@ -1,0 +1,31 @@
+@use 'constants';
+
+nav {
+  @include constants.flex-center(row);
+  justify-content: space-between;
+  position: fixed;
+
+  height: 120px;
+  width: 100vw;
+  max-width: 100%;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+
+  background-color: constants.$primary-color;
+  color: constants.$secondary-color;
+
+  font-family: constants.$title-font-stack;
+}
+
+.new-tweet {
+  @include constants.flex-center();
+  
+  padding: 15px;
+  margin: -15px;
+
+  font-family: constants.$body-font-stack;
+}
+
+.new-tweet:hover {
+  cursor: pointer;
+}

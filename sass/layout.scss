@@ -1,0 +1,187 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+
+@use 'constants';
+
+body {
+  background-color: constants.$secondary-color;
+
+  color: #545149;
+  font-family: $body-font-stack;
+  font-size: 24px;
+}
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+
+main {
+  @include constants.flex-center();
+  justify-content: center;
+
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 100vw;
+  max-width: 100%;
+
+  background-color: constants.$secondary-color;
+}
+
+article {
+  background-color: constants.$secondary-color;
+  width: 80vw;
+  margin-top: 20px;
+
+  font-size: 24px;
+  font-family: constants.$body-font-stack;
+
+  border: solid;
+  border-radius: 1px;
+
+  header {
+    background-color: constants.$body-font-stack;
+    background-image: none;
+
+    height: 50px;
+    width: 100%;
+    margin: 20px 0px 20px 0px;
+    padding: 0px 20px 0px 20px;
+
+    font-size: 24px;
+    font-family: constants.$body-font-stack;
+    
+    @include constants.flex-center("row");
+    justify-content: space-between;
+  }
+
+  h3 {
+    margin: 0px;
+    padding-left: 10px;
+
+    font-weight: 300;
+    font-size: 24px;
+    font-family: constants.$body-font-stack;
+  }
+
+  h4 {
+    margin: 0px;
+    padding-left: 10px;
+
+    color: #949189;
+    font-size: 24px;
+    font-family: constants.$body-font-stack;
+  }
+
+  p {
+    font-size: 24px;
+    font-weight: 600;
+
+    border-bottom: solid;
+
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px 10px 30px 10px;
+
+    text-wrap: wrap;
+    word-break: break-all;
+  }
+
+  footer {
+    padding: 20px 20px 20px 20px;
+
+    font-size: 20px;
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+article:hover {
+  box-shadow: 10px 10px #545149;
+}
+
+section {
+  font-family: constants.$body-font-stack;
+
+  @include constants.flex-center();
+  text-align: center;
+  display: none;
+}
+
+.social-symbols :hover {
+  color: constants.$accent-color;
+  box-shadow: none;
+}
+
+.tweet-author {
+  display: flex;
+  flex-direction: row;
+}
+
+.top-return {
+  @include flex-center();
+  justify-content: center;
+
+  background-color: constants.$primary-color;
+  color: constants.$secondary-color;
+
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  bottom: 15px;
+  right: 15px;
+
+  position: fixed;
+  display: none;
+}
+
+.top-return:hover {
+  cursor: pointer;
+}
+
+#error-message {
+  color: red;
+  font-family: constants.$body-font-stack;
+  font-size: 16pt;
+  font-weight: 600;
+  text-align: center;
+
+  padding: 10px;
+  
+  border: solid;
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  .wrapper {
+    display: flex;
+  }
+
+  main {
+    margin-top: 200px;
+
+    width: 65vw;
+
+    justify-content: right;
+  }
+
+  article {
+    width: 50vw;
+  }
+}

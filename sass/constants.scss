@@ -1,0 +1,15 @@
+// FONT CONSTANTS
+$title-font-stack: 'Bungee', sans-serif;
+$body-font-stack: 'Source Sans 3', sans-serif;
+
+// COLOR CONSTANTS
+$primary-color: #4056A1;
+$secondary-color: #f4f1ec;
+$accent-color: #d89821; 
+
+// THEME CONSTANTS
+@mixin flex-center($theme: column) {
+  display: flex;
+  flex-direction: $theme;
+  align-items: center;
+}

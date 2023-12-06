@@ -1,0 +1,26 @@
+@use 'constants';
+
+header {
+  background-image: url("https://www.transparenttextures.com/patterns/crisp-paper-ruffles.png");
+  background-color: constants.$accent-color;
+
+  @include constants.flex-center();
+  justify-content: center;
+
+  height: 520px;
+  width: 100vw;
+  max-width: 100%;
+  padding-top: 120px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .profile-splash {
+    justify-content: left;
+    position: sticky;
+    
+    width: 35vw;
+    margin-right: 5%;
+    margin-left: 5%;
+    top: 220px;
+  }
+}
