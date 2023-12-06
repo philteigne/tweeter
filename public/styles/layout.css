@@ -1,4 +1,4 @@
-/*
+/* 
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
@@ -14,87 +14,101 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
-  color: #545149;
   background-color: #f4f1ec;
-  font-size: 24px;
+  color: #545149;
   font-family: "Source Sans 3", sans-serif;
+  font-size: 24px;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
 main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   padding-left: 5%;
   padding-right: 5%;
   width: 100vw;
   max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
   background-color: #f4f1ec;
 }
 
 article {
-  background-color: #f4f1ec;
-  width: 80vw;
   font-size: 24px;
   font-family: "Source Sans 3", sans-serif;
+
+  width: 80vw;
+  margin-top: 20px;
   border: solid;
   border-radius: 1px;
-  margin-top: 20px;
+
+  background-color: #f4f1ec;
 }
 
 article header {
-  background-color: #f4f1ec;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
   font-size: 24px;
   font-family: "Source Sans 3", sans-serif;
+
   height: 50px;
   width: 100%;
   margin: 20px 0px 20px 0px;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
   padding: 0px 20px 0px 20px;
+
   background-image: none;
+  background-color: #f4f1ec;
 }
 
 article h3 {
+  font-weight: 300;
   font-size: 24px;
   font-family: "Source Sans 3", sans-serif;
+
   margin: 0px;
   padding-left: 10px;
-  font-weight: 300;
 }
 
 article h4 {
   font-size: 24px;
   font-family: "Source Sans 3", sans-serif;
+
   margin: 0px;
   padding-left: 10px;
+
   color: #949189;
 }
-
 article p {
   font-size: 24px;
   font-weight: 600;
-  border-bottom: solid;
+
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 0px 10px 30px 10px;
+  border-bottom: solid;
+
   text-wrap: wrap;
   word-break: break-all;
 }
-
 article footer {
-  font-size: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  font-size: 20px;
+  
   padding: 20px 20px 20px 20px;
 }
 
@@ -103,12 +117,13 @@ article:hover {
 }
 
 section {
-  font-family: "Source Sans 3", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   display: none;
+
+  font-family: "Source Sans 3", sans-serif;
 }
 
 .social-symbols :hover {
@@ -123,17 +138,20 @@ section {
 
 .top-return {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #FFFFFF;
+  position: fixed;
+  display: none;
+
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background-color: #4056A1;
-  position: fixed;
   bottom: 15px;
   right: 15px;
-  display: none;
+
+  background-color: #4056A1;
+  color: #f4f1ec;
 }
 
 .top-return:hover {
@@ -141,14 +159,17 @@ section {
 }
 
 #error-message {
-  color: red;
-  font-size: 16pt;
-  font-family: "Source Sans 3", sans-serif;
-  font-weight: 600;
   text-align: center;
-  border: solid;
-  padding: 10px;
   display: none;
+
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 16pt;
+  font-weight: 600;
+
+  padding: 10px;
+  margin-bottom: 50px;
+  color: red;
+  border: solid;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -156,9 +177,10 @@ section {
     display: flex;
   }
   main {
+    justify-content: right;
+    
     margin-top: 200px;
     width: 65vw;
-    justify-content: right;
   }
   article {
     width: 50vw;
