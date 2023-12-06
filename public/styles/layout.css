@@ -6,6 +6,7 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -13,18 +14,16 @@ html {
 /*
  * Global layout stuff
  */
-
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: "Source Sans 3", sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-
 main {
   padding-left: 5%;
   padding-right: 5%;
@@ -41,7 +40,7 @@ article {
   background-color: #f4f1ec;
   width: 80vw;
   font-size: 24px;
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   border: solid;
   border-radius: 1px;
   margin-top: 20px;
@@ -50,7 +49,7 @@ article {
 article header {
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   height: 50px;
   width: 100%;
   margin: 20px 0px 20px 0px;
@@ -64,7 +63,7 @@ article header {
 
 article h3 {
   font-size: 24px;
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   margin: 0px;
   padding-left: 10px;
   font-weight: 300;
@@ -72,7 +71,7 @@ article h3 {
 
 article h4 {
   font-size: 24px;
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   margin: 0px;
   padding-left: 10px;
   color: #949189;
@@ -104,7 +103,7 @@ article:hover {
 }
 
 section {
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -126,7 +125,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  color:#FFFFFF;
+  color: #FFFFFF;
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -144,7 +143,7 @@ section {
 #error-message {
   color: red;
   font-size: 16pt;
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   font-weight: 600;
   text-align: center;
   border: solid;
@@ -156,13 +155,11 @@ section {
   .wrapper {
     display: flex;
   }
-
   main {
     margin-top: 200px;
     width: 65vw;
     justify-content: right;
   }
-
   article {
     width: 50vw;
   }
