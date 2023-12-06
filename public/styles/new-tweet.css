@@ -1,13 +1,15 @@
 form {
-  background-color: #f3f1ed;
   height: 150px;
+
+  background-color: #f3f1ed;
 }
 
 form button {
-  background-color: #4056A1;
-  color: #FFFFFF;
   font-family: "Bungee", sans-serif;
   font-size: 1.5rem;
+
+  background-color: #4056A1;
+  color: #FFFFFF;
 }
 
 form button:hover {
@@ -15,18 +17,21 @@ form button:hover {
 }
 
 form textarea {
-  border: none;
-  border-bottom: solid;
-  resize: none;
-  box-sizing: border-box;
-  width: 80vw;
-  max-width: 100%;
-  background-color: #f3f1ed;
-  height: 2.5rem;
   font-family: "Source Sans 3", sans-serif;
   font-weight: 600;
   font-size: 24px;
   color: #000000;
+
+  height: 2.5rem;
+  width: 80vw;
+  max-width: 100%;
+
+  border: none;
+  border-bottom: solid;
+  resize: none;
+  box-sizing: border-box;
+
+  background-color: #f3f1ed;
 }
 
 form textarea:focus {
@@ -47,11 +52,13 @@ form div {
 
 @media only screen and (min-width: 1024px) {
   form textarea {
-    width: 50vw;
-    background-color: #f3f1ed;
-    height: 2.5rem;
     font-family: "Source Sans 3", sans-serif;
     font-weight: 600;
     color: #000000;
+
+    height: 2.5rem;
+    width: 50vw;
+
+    background-color: #f3f1ed;
   }
 }
