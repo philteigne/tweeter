@@ -12,7 +12,6 @@ $(document).ready(function() {
 
   });
 
-
   $('.top-return').on('click', () => {
     window.scrollTo(0, 0);
     if ($('.write-tweet').css('display') === "none") {
@@ -22,3 +21,4 @@ $(document).ready(function() {
   });
 
 });
+
