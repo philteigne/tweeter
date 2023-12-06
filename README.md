@@ -21,10 +21,10 @@ This app follows responsive web design and utilizes SASS to style and organize.
 
 ## What to Expect
 
-![Tweeter Mobile Layout](/images/Tweeter-Mobile_Layout.JPG)
+![Tweeter Mobile Layout](/docs/Tweeter-Mobile_Layout.JPG)
 
 Tweeter is a simple twitter clone. Users are able to compose and post tweets. The server will store submitted tweets and display them in reverse chronological order.
 
-![Tweet Desktop Layout](/images/Tweeter-Desktop_Layout.JPG)
+![Tweet Desktop Layout](/docs/Tweeter-Desktop_Layout.JPG)
 
 This app has two responsive layouts and utilizes SASS to style layouts.
