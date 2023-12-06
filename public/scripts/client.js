@@ -26,14 +26,16 @@ $(document).ready(function() {
 
   //  add event listener that posts to /tweets
   $('#compose-tweet').on("submit", (event) => {
+    //  error if tweet form contains too long entry
     if ($('#compose-tweet')[0][2].value < 0) {
-      console.log("long tweet");
       $('#error-message').empty();
       $('#error-message').text("Submitted tweet exceeds character limit");
+      $('#error-message').slideDown();
       event.preventDefault();
       return;
     }
 
+    //  error if tweet form is empty
     if ($('#compose-tweet')[0][2].value >= 140 || $('#compose-tweet')[0][2].value === null) {
       console.log("empty tweet");
       $('#error-message').empty();
@@ -43,6 +45,7 @@ $(document).ready(function() {
       return;
     }
 
+    //  remove error if tweet is valid
     if ($('#compose-tweet')[0][2].value > 0 && $('#compose-tweet')[0][2].value <= 140) {
       $('#error-message').slideUp();
     }
@@ -64,6 +67,7 @@ $(document).ready(function() {
 
   // fetch tweets from /tweets
   const loadTweets = () => {
+
     $.ajax({
       type: "GET",
       url: "/tweets",
