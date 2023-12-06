@@ -1,23 +1,20 @@
 header {
+  background-image: url("https://www.transparenttextures.com/patterns/crisp-paper-ruffles.png");
+  background-color: #d89821;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-
   height: 520px;
   width: 100vw;
   max-width: 100%;
   padding-top: 120px;
-
-  background-color: #d89821;
-  background-image: url("https://www.transparenttextures.com/patterns/crisp-paper-ruffles.png");
 }
 
 @media only screen and (min-width: 1024px) {
   .profile-splash {
     justify-content: left;
     position: sticky;
-    
     width: 35vw;
     margin-right: 5%;
     margin-left: 5%;
