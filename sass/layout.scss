@@ -1,3 +1,4 @@
+@use 'constants';
 /*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
@@ -14,13 +15,11 @@ html {
  * Global layout stuff
  */
 
-@use 'constants';
-
 body {
   background-color: constants.$secondary-color;
 
   color: #545149;
-  font-family: $body-font-stack;
+  font-family: constants.$body-font-stack;
   font-size: 24px;
 }
 
@@ -52,7 +51,7 @@ article {
   border-radius: 1px;
 
   header {
-    background-color: constants.$body-font-stack;
+    background-color: constants.$secondary-color;
     background-image: none;
 
     height: 50px;
@@ -63,7 +62,7 @@ article {
     font-size: 24px;
     font-family: constants.$body-font-stack;
     
-    @include constants.flex-center("row");
+    @include constants.flex-center(row);
     justify-content: space-between;
   }
 
@@ -135,7 +134,7 @@ section {
 }
 
 .top-return {
-  @include flex-center();
+  @include constants.flex-center();
   justify-content: center;
 
   background-color: constants.$primary-color;
